@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy Policy – HN Filter</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      font-size: 16px;
+      line-height: 1.7;
+      color: #222;
+      background: #fff;
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 48px 24px 80px;
+    }
+
+    h1 {
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 4px;
+      color: #111;
+    }
+
+    .meta {
+      font-size: 0.875rem;
+      color: #777;
+      margin-bottom: 40px;
+    }
+
+    h2 {
+      font-size: 1.125rem;
+      font-weight: 600;
+      margin-top: 36px;
+      margin-bottom: 10px;
+      color: #111;
+    }
+
+    p { margin-bottom: 14px; }
+
+    ul {
+      margin: 8px 0 14px 20px;
+    }
+
+    ul li { margin-bottom: 6px; }
+
+    a { color: #c60; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .highlight {
+      background: #fffbf0;
+      border-left: 4px solid #f60;
+      padding: 14px 18px;
+      border-radius: 2px;
+      margin: 24px 0;
+      font-weight: 500;
+    }
+
+    footer {
+      margin-top: 56px;
+      padding-top: 24px;
+      border-top: 1px solid #eee;
+      font-size: 0.85rem;
+      color: #888;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Privacy Policy</h1>
+  <p class="meta">HN Filter Chrome Extension &nbsp;·&nbsp; Last updated: May 2026</p>
+
+  <div class="highlight">
+    Short version: HN Filter collects no personal data, stores nothing on any server,
+    and never shares anything with third parties. All your settings live exclusively on
+    your own device.
+  </div>
+
+  <h2>1. Who We Are</h2>
+  <p>
+    HN Filter is a Chrome browser extension that hides AI-related posts on Hacker News
+    (news.ycombinator.com). It is developed and maintained as an independent project.
+    Questions or concerns can be sent to the contact address listed at the bottom of this page.
+  </p>
+
+  <h2>2. What Data We Collect</h2>
+  <p><strong>We collect no personal data.</strong> Specifically:</p>
+  <ul>
+    <li>We do not collect your name, email address, or any contact information.</li>
+    <li>We do not collect or record which websites you visit.</li>
+    <li>We do not collect browsing history, page contents, or search queries.</li>
+    <li>We do not use cookies or any persistent tracking identifiers.</li>
+    <li>We do not run analytics, crash reporters, or telemetry of any kind.</li>
+  </ul>
+
+  <h2>3. Data Stored Locally on Your Device</h2>
+  <p>
+    HN Filter stores the following data in <code>chrome.storage.local</code> — a sandboxed
+    storage area on your own machine that is never transmitted to any external server:
+  </p>
+  <ul>
+    <li><strong>Custom keyword list</strong> — terms you add to the blacklist (Pro feature).</li>
+    <li><strong>Whitelist</strong> — terms you add to the "never hide" list (Pro feature).</li>
+    <li><strong>License status</strong> — a boolean flag indicating whether a valid Pro license
+        has been activated, and the license key itself.</li>
+  </ul>
+  <p>
+    This data never leaves your browser. It is not synced to any cloud service, not sent to our
+    servers, and not accessible to any third party. You can clear it at any time by removing the
+    extension or clearing Chrome's extension storage.
+  </p>
+
+  <h2>4. License Key Verification (Pro Users Only)</h2>
+  <p>
+    If you purchase the Pro upgrade and choose to activate it, HN Filter sends your license key
+    to <strong>Gumroad's API</strong> (<code>api.gumroad.com</code>) to verify its validity.
+    This is the only outbound network request HN Filter ever makes, and it occurs solely when
+    you click the "Activate" button in the popup.
+  </p>
+  <p>
+    We do not operate or control Gumroad's servers. The data handled during that verification
+    is governed by <a href="https://gumroad.com/privacy" target="_blank" rel="noopener">Gumroad's
+    Privacy Policy</a>. After the one-time verification, HN Filter stores the result locally and
+    does not contact Gumroad again.
+  </p>
+
+  <h2>5. Permissions Explained</h2>
+  <p>HN Filter requests the following Chrome permissions and uses them only as described:</p>
+  <ul>
+    <li>
+      <strong>storage</strong> — to save your keyword lists and license status on your local device.
+    </li>
+    <li>
+      <strong>tabs</strong> — to check whether the currently active tab is on
+      news.ycombinator.com before doing anything; HN Filter takes no action on other sites.
+    </li>
+    <li>
+      <strong>scripting</strong> — to inject the filtering script into HN listing pages so it
+      can hide matching story rows.
+    </li>
+    <li>
+      <strong>Host access: news.ycombinator.com</strong> — the site where filtering takes place.
+    </li>
+    <li>
+      <strong>Host access: api.gumroad.com</strong> — used only for the one-time Pro license
+      verification described above.
+    </li>
+  </ul>
+
+  <h2>6. Third-Party Services</h2>
+  <p>
+    HN Filter does not integrate with any advertising networks, analytics platforms, or data
+    brokers. The only third-party service involved is Gumroad, solely for Pro license
+    verification as described in Section 4.
+  </p>
+
+  <h2>7. Children's Privacy</h2>
+  <p>
+    HN Filter is not directed at children under 13. We do not knowingly collect any information
+    from children.
+  </p>
+
+  <h2>8. Changes to This Policy</h2>
+  <p>
+    If we make material changes to this privacy policy, we will update the "Last updated" date
+    at the top of this page. Continued use of the extension after any changes constitutes
+    acceptance of the updated policy. We encourage you to review this page periodically.
+  </p>
+
+  <h2>9. Contact</h2>
+  <p>
+    If you have questions about this privacy policy or how HN Filter handles data, please open
+    an issue on the extension's GitHub repository or contact us at the email address associated
+    with the Chrome Web Store listing.
+  </p>
+
+  <footer>
+    <p>HN Filter · Privacy Policy · Effective May 2026</p>
+    <p>This policy is hosted on GitHub Pages and applies to the HN Filter Chrome extension.</p>
+  </footer>
+
+</body>
+</html>
