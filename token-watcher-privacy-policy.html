@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy Policy — Token Watcher</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      font-size: 16px;
+      line-height: 1.7;
+      color: #1a1a1a;
+      background: #fff;
+      padding: 40px 20px 80px;
+    }
+
+    .container {
+      max-width: 760px;
+      margin: 0 auto;
+    }
+
+    header {
+      border-bottom: 2px solid #e5e7eb;
+      padding-bottom: 24px;
+      margin-bottom: 40px;
+    }
+
+    header h1 {
+      font-size: 28px;
+      font-weight: 700;
+      color: #111;
+    }
+
+    header p {
+      color: #6b7280;
+      margin-top: 6px;
+      font-size: 14px;
+    }
+
+    h2 {
+      font-size: 18px;
+      font-weight: 600;
+      color: #111;
+      margin: 36px 0 12px;
+    }
+
+    p { margin-bottom: 12px; }
+
+    ul {
+      margin: 8px 0 12px 24px;
+    }
+
+    ul li { margin-bottom: 6px; }
+
+    .highlight {
+      background: #f0fdf4;
+      border-left: 4px solid #22c55e;
+      padding: 14px 18px;
+      border-radius: 0 8px 8px 0;
+      margin: 16px 0;
+      font-size: 15px;
+    }
+
+    .highlight strong { color: #15803d; }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 16px 0;
+      font-size: 14px;
+    }
+
+    th {
+      background: #f9fafb;
+      text-align: left;
+      padding: 10px 14px;
+      border: 1px solid #e5e7eb;
+      font-weight: 600;
+      color: #374151;
+    }
+
+    td {
+      padding: 10px 14px;
+      border: 1px solid #e5e7eb;
+      vertical-align: top;
+    }
+
+    tr:nth-child(even) td { background: #fafafa; }
+
+    a { color: #2563eb; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    footer {
+      margin-top: 60px;
+      padding-top: 24px;
+      border-top: 1px solid #e5e7eb;
+      font-size: 13px;
+      color: #9ca3af;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+
+    <header>
+      <h1>Privacy Policy</h1>
+      <p>Token Watcher Chrome Extension &nbsp;·&nbsp; Last updated: June 10, 2026</p>
+    </header>
+
+    <div class="highlight">
+      <strong>Short version:</strong> Token Watcher only reads token counts from AI API responses in your browser. It never reads your conversation content, never sends any data to external servers, and stores everything locally on your device.
+    </div>
+
+    <h2>1. What is Token Watcher?</h2>
+    <p>
+      Token Watcher is a Chrome browser extension that intercepts API responses from Claude.ai and ChatGPT to extract token usage metadata (input tokens, output tokens, cache tokens) and calculate the associated cost. All processing happens locally in your browser.
+    </p>
+
+    <h2>2. Data We Collect</h2>
+    <p>Token Watcher collects only the following fields from AI API responses:</p>
+    <table>
+      <thead>
+        <tr>
+          <th>Field</th>
+          <th>Source</th>
+          <th>Purpose</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Input token count</td>
+          <td>API response metadata</td>
+          <td>Cost calculation</td>
+        </tr>
+        <tr>
+          <td>Output token count</td>
+          <td>API response metadata</td>
+          <td>Cost calculation</td>
+        </tr>
+        <tr>
+          <td>Cache write / read token count</td>
+          <td>API response metadata</td>
+          <td>Cost calculation</td>
+        </tr>
+        <tr>
+          <td>Model name</td>
+          <td>API response metadata</td>
+          <td>Per-model cost breakdown</td>
+        </tr>
+        <tr>
+          <td>Timestamp</td>
+          <td>Generated locally</td>
+          <td>Daily trend chart</td>
+        </tr>
+        <tr>
+          <td>Site hostname</td>
+          <td>Current tab URL</td>
+          <td>Distinguish Claude vs ChatGPT</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p><strong>We do not collect:</strong></p>
+    <ul>
+      <li>Conversation content, prompts, or AI responses</li>
+      <li>Your name, email address, or any personal identifiers</li>
+      <li>Browsing history or URLs beyond the hostname of supported AI sites</li>
+      <li>Browser cookies, passwords, or authentication tokens</li>
+    </ul>
+
+    <h2>3. How Data is Stored</h2>
+    <p>
+      All data is stored locally on your device using the browser's built-in <code>chrome.storage.local</code> API. Data is automatically pruned after the retention window (7 days for the free plan, 30 days for Pro). No data is ever written to a database or file server.
+    </p>
+
+    <h2>4. Data Sharing</h2>
+    <p>
+      Token Watcher does <strong>not</strong> share, sell, transmit, or otherwise disclose any collected data to third parties.
+    </p>
+    <p>
+      The only outbound network request made by the extension is the Gumroad license verification call (<code>api.gumroad.com/v2/licenses/verify</code>) when a user manually activates a Pro license key. This request contains only the license key and the product ID — no token data is included.
+    </p>
+
+    <h2>5. Permissions Explained</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Permission</th>
+          <th>Why it is needed</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><code>storage</code></td>
+          <td>Store token usage records and settings locally in the browser.</td>
+        </tr>
+        <tr>
+          <td><code>alarms</code></td>
+          <td>Schedule a daily background task to prune old records beyond the retention window.</td>
+        </tr>
+        <tr>
+          <td><code>notifications</code></td>
+          <td>Send an optional alert when daily cost exceeds a user-configured threshold.</td>
+        </tr>
+        <tr>
+          <td><code>tabs</code></td>
+          <td>Open the options / report page when the user clicks "Full Report" or "Settings" in the popup.</td>
+        </tr>
+        <tr>
+          <td>Host permissions<br><small>(claude.ai, chatgpt.com, api.anthropic.com)</small></td>
+          <td>Inject content scripts that intercept fetch responses to extract token count metadata from SSE streams.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>6. Children's Privacy</h2>
+    <p>
+      Token Watcher is a developer tool not directed at children under 13. We do not knowingly collect any information from children.
+    </p>
+
+    <h2>7. Changes to This Policy</h2>
+    <p>
+      If this policy is updated, the "Last updated" date at the top of this page will be revised. Continued use of the extension after any changes constitutes acceptance of the updated policy.
+    </p>
+
+    <h2>8. Contact</h2>
+    <p>
+      Questions or concerns about this privacy policy can be sent to:
+      <a href="mailto:can995835646@gmail.com">can995835646@gmail.com</a>
+    </p>
+
+    <footer>
+      &copy; 2026 Token Watcher. This privacy policy applies to the Token Watcher Chrome extension.
+    </footer>
+
+  </div>
+</body>
+</html>
